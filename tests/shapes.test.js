@@ -1,4 +1,6 @@
 //TODO: Import required classes to run tests
+const { Circle, Triangle, Square } = require('../libs/shapes');
+
 
 describe("Circle", () => {
   test("should render svg for a green circle element", () => {
