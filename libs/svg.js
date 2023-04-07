@@ -16,23 +16,7 @@ class SVG {
         
     }
     setShape(shape) {
-        let shapeT;
-
-        // switch (this.shape) {
-        //     case 'circle':
-        //         shapeT = new Circle(this.color);
-        //         break;
-        //     case 'triangle':
-        //         shapeT = new Triangle(this.color);
-        //         break;
-        //     case 'square':
-        //         shapeT = new Square(this.color);
-        //         break;
-        //     default:
-
-        //         break;
-        // }
-
+        console.log(this.shape)
         this.shape = shape.render();
     }
 
