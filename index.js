@@ -1,8 +1,10 @@
+// import rewured functions
 const SVG = require('./libs/svg')
 const { Circle, Triangle, Square } = require('./libs/shapes');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// inital function to prompt questions
 function init() {
     inquirer
     .prompt([
@@ -28,15 +30,18 @@ function init() {
         name: 'shapecolor',
         },
     ])
+    // sends response to write function
     .then((response) =>
         writeToFile(response))
 };
 
+// takes user responses and creates SVG
 function writeToFile(data) {
-    console.log(data)
 
     const svg = new SVG();
+    // sets text and text color from user response
     svg.setText(data.text, data.textcolor);
+    // if then statement for correct shape
     let userShape;
     if (data.shape === "circle") {
         userShape = new Circle(data.shapecolor);
@@ -45,17 +50,13 @@ function writeToFile(data) {
     } else if (data.shape === "square") {
         userShape = new Square(data.shapecolor);
     }
+    // sets shape color and gives us shape info
     userShape.setColor(data.shapecolor);
     svg.setShape(userShape)
-
-
+    // write SVG and success message
     fs.writeFile('logo.svg', svg.render(), (err) =>
     err ? console.error(err) : console.log("Generated logo.svg")
 );
 }
 
 init();
-
-// const svg = new SVG();
-
-// svg.run();
