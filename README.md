@@ -23,6 +23,8 @@
 
 Once initiaited, answer the prompts in your terminal and a md file will be created in the repo directory.
 
+[Walk Through Video](https://drive.google.com/file/d/1Fpf9TfPFY4jxRZfHQlSjLwmUe4OVtpIm/view?usp=share_link)
+
 ## Credits
 
 A special thank you to the staff and students of the UCLA full stack bootcamp.
